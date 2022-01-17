@@ -1,0 +1,37 @@
+{% load static %}<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Vacine já!</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include 'edital023/partial_favicon.html' %}
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'edital023_auth.css' %}">
+  {{ form.media.css }}
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script> -->
+  <!-- <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script> -->
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card card-signin flex-row my-5">
+          <div class="card-img-left d-none d-md-flex"><!-- Background image for card set in CSS! --></div>
+          <div class="card-body">
+            {% include 'edital023/partial_messages.html' %}
+        
+            {% block container %}{% endblock container %}
+
+            <hr/><a class="d-block text-center mt-2 small" href="{% url 'home' %}">Voltar para o começo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% block outer_body_extra_scripts %}{% endblock outer_body_extra_scripts %}
+</html>

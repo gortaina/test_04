@@ -1,0 +1,18 @@
+{% extends "edital023/base.html" %}
+
+{% block content %}
+{{request.cidadao.agendamento}}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Comprovante</h1>
+  <dl>
+    <dt>Cidadão:</dt><dd>{{request.cidadao.nome}}</dd>
+    <dt>Grupo atendimento:</dt><dd>{{request.cidadao.agendamento.porque}}</dd>
+    <dt>Data e hora do atendimento:</dt><dd>{{request.cidadao.agendamento.quando}}</dd>
+    <dt>Estabelecimento de saúde:</dt><dd>
+      {{request.cidadao.agendamento.onde.nom_estab}}
+      <br> {{request.cidadao.agendamento.onde.dsc_endereco}}
+      <br> {{request.cidadao.agendamento.onde.municipio}}
+    </dd>
+  </dl>
+</div>
+{% endblock content %}
